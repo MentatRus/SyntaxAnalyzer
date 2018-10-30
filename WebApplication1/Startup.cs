@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using WebApplication1.Models;
 
 namespace WebApplication1
 {
@@ -25,6 +27,9 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+//            string connection = Configuration.GetConnectionString("DefaultConnection");
+            string connection = @"Server=(localdb)\mssqllocaldb;Database=Documents;Trusted_Connection=True;";
+            services.AddDbContext<DocumentContext>(opt => opt.UseSqlServer(connection));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -40,7 +45,11 @@ namespace WebApplication1
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+//            app.UseHttpsRedirection();
+//            app.UseMvc(routes =>
+//            {
+//                routes.MapRoute("default", "api/{controller=Values}/{action=Index}/{id?}");
+//            });
             app.UseMvc();
         }
     }

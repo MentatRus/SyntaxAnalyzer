@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Nickolay\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
+    "projectUniqueName": "C:\\Users\\n.dolgopolov\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
     "projectName": "WebApplication1",
-    "projectPath": "C:\\Users\\Nickolay\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
-    "outputPath": "C:\\Users\\Nickolay\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\obj\\",
+    "projectPath": "C:\\Users\\n.dolgopolov\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
+    "outputPath": "C:\\Users\\n.dolgopolov\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -36,6 +36,14 @@
           "suppressParent": "All",
           "target": "Package",
           "version": "[2.1.2, )"
+        },
+        "Microsoft.EntityFrameworkCore.SqlServer": {
+          "target": "Package",
+          "version": "[2.2.0-preview3-35497, )"
+        },
+        "Microsoft.EntityFrameworkCore.Sqlite": {
+          "target": "Package",
+          "version": "[2.1.4, )"
         },
         "Microsoft.NETCore.App": {
           "suppressParent": "All",

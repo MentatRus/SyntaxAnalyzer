@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="\app" t="IncludeRecursive" />
-    <e p="\d1cef33c" t="IncludeRecursive" />
-    <e p="C:\Users\Nickolay\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Nickolay\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_SyntaxAnalyzer.565156445.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Nickolay\RiderProjects\SyntaxAnalyzer" t="IncludeFlat">
+    <e p="C:\Users\n.dolgopolov\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_SyntaxAnalyzer.101036752.00" t="ExcludeRecursive" />
+    <e p="C:\Users\n.dolgopolov\RiderProjects\SyntaxAnalyzer" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="SyntaxAnalyzer.sln" t="IncludeFlat" />
       <e p="WebApplication1" t="IncludeRecursive">
@@ -13,7 +10,17 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="DocumentsController.cs" t="Include" />
           <e p="ValuesController.cs" t="Include" />
+        </e>
+        <e p="Migrations" t="Include">
+          <e p="20181030122549_InitialCreate.cs" t="Include" />
+          <e p="20181030122549_InitialCreate.Designer.cs" t="Include" />
+          <e p="DocumentContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Document.cs" t="Include" />
+          <e p="DocumentContext.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
