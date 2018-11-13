@@ -33,7 +33,7 @@ namespace WebApplication1.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Post([FromBody] string value)
 		{
-			db.Documents.Add(new Document());
+			db.Documents.Add(new Document(value));
 			await db.SaveChangesAsync();
 			return RedirectToAction("Get");
 		}

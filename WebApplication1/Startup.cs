@@ -28,8 +28,9 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
 //            string connection = Configuration.GetConnectionString("DefaultConnection");
-            string connection = @"Server=(localdb)\mssqllocaldb;Database=Documents;Trusted_Connection=True;";
-            services.AddDbContext<DocumentContext>(opt => opt.UseSqlServer(connection));
+            string connection = "Data Source=documents.db";
+//            string connection = "Server=(localdb)\\Documents_DB;Database=Documents;Trusted_Connection=True;";
+            services.AddDbContext<DocumentContext>(opt => opt.UseSqlite(connection));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -38,7 +39,10 @@ namespace WebApplication1
         {
             if (env.IsDevelopment())
             {
+                
+                
                 app.UseDeveloperExceptionPage();
+               
             }
             else
             {
