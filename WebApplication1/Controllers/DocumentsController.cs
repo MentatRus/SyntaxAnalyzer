@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using WebApplication1.Analyzer;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -22,18 +25,21 @@ namespace WebApplication1.Controllers
 //			new Document("First doc", "First doc parsed"),
 //			new Document("Second doc", "Second doc parsed")
 //		};
-		// GET api/values
+		// GET api/documents
 		[HttpGet]
 		public JsonResult Get()
 		{
-			return Json(db.Documents.ToList());
+			var documents = db.Documents.Include(document => document.Words).ToList();
+			return Json(documents);
 		}
 		
 		// POST api/values
 		[HttpPost]
-		public async Task<IActionResult> Post([FromBody] string value)
+		[Route("add")]
+		public async Task<IActionResult> Add([FromBody] string value)
 		{
-			db.Documents.Add(new Document(value));
+			Document document = MainAnalyzer.ParseText(value, db);
+			db.Documents.Add(document);
 			await db.SaveChangesAsync();
 			return RedirectToAction("Get");
 		}

@@ -25,6 +25,9 @@
         <e p="Models" t="Include">
           <e p="Document.cs" t="Include" />
           <e p="DocumentContext.cs" t="Include" />
+          <e p="MemberOfSentence.cs" t="Include" />
+          <e p="PartOfSpeech.cs" t="Include" />
+          <e p="Word.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

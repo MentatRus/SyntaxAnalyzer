@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using WebApplication1.Analyzer;
 namespace WebApplication1.Models
 {
@@ -6,17 +7,11 @@ namespace WebApplication1.Models
 	{
 		public int Id { get; set; }
 		public string Raw { get; set; }
-		public string Parsed { get; set; }
-
+		public ICollection<Word> Words { get; set; }
 		public Document()
 		{
-			
+			Words = new List<Word>();
 		}
 
-		public Document(string value)
-		{
-			Raw = value;
-			Parsed = MainAnalyzer.ParseText(value);
-		}
 	}
 }

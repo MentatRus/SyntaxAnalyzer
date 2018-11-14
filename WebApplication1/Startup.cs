@@ -11,50 +11,42 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using WebApplication1.Models;
 
 namespace WebApplication1
 {
-    public class Startup
-    {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+	public class Startup
+	{
+		public Startup(IConfiguration configuration)
+		{
+			Configuration = configuration;
+		}
 
-        public IConfiguration Configuration { get; }
+		public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-//            string connection = Configuration.GetConnectionString("DefaultConnection");
-            string connection = "Data Source=documents.db";
-//            string connection = "Server=(localdb)\\Documents_DB;Database=Documents;Trusted_Connection=True;";
-            services.AddDbContext<DocumentContext>(opt => opt.UseSqlite(connection));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-        }
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
+		{
+			string connection = "Data Source=documents.db";
+			services.AddDbContext<DocumentContext>(opt => opt.UseSqlite(connection));
+			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+				.AddJsonOptions(options => options.SerializerSettings.Formatting = Formatting.Indented);
+		}
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                
-                
-                app.UseDeveloperExceptionPage();
-               
-            }
-            else
-            {
-                app.UseHsts();
-            }
+		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+		{
+			if (env.IsDevelopment())
+			{
+				app.UseDeveloperExceptionPage();
+			}
+			else
+			{
+				app.UseHsts();
+			}
 
-//            app.UseHttpsRedirection();
-//            app.UseMvc(routes =>
-//            {
-//                routes.MapRoute("default", "api/{controller=Values}/{action=Index}/{id?}");
-//            });
-            app.UseMvc();
-        }
-    }
+			app.UseMvc();
+		}
+	}
 }

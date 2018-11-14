@@ -1,26 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using Newtonsoft.Json;
+using WebApplication1.Models;
 
 namespace WebApplication1.Analyzer
 {
 	public class MainAnalyzer
 	{
-		public static object ParseText(string input)
+		public static Document ParseText(string input, DocumentContext db)
 		{
-			var sentenceMembers = new List<string> {"Подлежащее", "Сказуемое", "Обстоятельство", "Дополнение"};
-			var partsOfSpeech = new List<string> {"Существитетельное", "Прилагательное", "Глагол", "Наречие"};
-			Thread.Sleep(1000);//Имитирует долгие вычисления
+			Document document = new Document();
+			document.Raw = input;
+			var partsOfSpeech = db.PartsOfSpeech.ToList();
+			var membersOfSentence = db.MembersOfSentence.ToList();
+			Regex nonAlphabet = new Regex("[^А-Яа-я ]");
+			var words = nonAlphabet
+				.Replace(input, " ")
+				.Split(" ", StringSplitOptions.RemoveEmptyEntries)
+				.Where(word => word.Length > 1);
+			
 			Random rnd = new Random();
-			var sentence = input.Split(" ").Select(x => new
+			foreach (var rawWord in words)
 			{
-				word = x,
-				sentence_member = sentenceMembers[rnd.Next(4)],
-				part_of_speech = partsOfSpeech[rnd.Next(4)]
-			});
-			return JsonConvert.SerializeObject(sentence);
+				Word word = new Word();
+				word.Value = rawWord;
+				word.MemberOfSentence = membersOfSentence[rnd.Next(membersOfSentence.Count)];
+				word.PartOfSpeech = partsOfSpeech[rnd.Next(rnd.Next(partsOfSpeech.Count))];
+				document.Words.Add(word);
+			}
+
+			return document;
 
 		}
 	}
