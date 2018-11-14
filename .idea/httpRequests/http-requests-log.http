@@ -1,0 +1,18 @@
+POST http://localhost:5000/api/documents
+Accept: */*
+Cache-Control: no-cache
+
+{"value": "lol"}
+
+<> 2018-10-29T065615.400.json
+
+###
+
+POST https://localhost:5001/api/documents
+Accept: */*
+Cache-Control: no-cache
+
+{"value": "lol"}
+
+###
+
