@@ -32,6 +32,12 @@ namespace WebApplication1
 			services.AddDbContext<DocumentContext>(opt => opt.UseSqlite(connection));
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
 				.AddJsonOptions(options => options.SerializerSettings.Formatting = Formatting.Indented);
+			services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+			{
+				builder.AllowAnyOrigin()
+					.AllowAnyMethod()
+					.AllowAnyHeader();
+			}));
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
