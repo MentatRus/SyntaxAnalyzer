@@ -11924,30 +11924,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\n.dolgopolov\\.nuget\\packages\\": {},
+    "C:\\Users\\Nickolay\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\n.dolgopolov\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\Nickolay\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\n.dolgopolov\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
-      "packagesPath": "C:\\Users\\n.dolgopolov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\n.dolgopolov\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\obj\\",
+      "projectPath": "C:\\Users\\Nickolay\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
+      "packagesPath": "C:\\Users\\Nickolay\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nickolay\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\n.dolgopolov\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Nickolay\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

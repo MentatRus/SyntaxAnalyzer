@@ -36,9 +36,9 @@ namespace WebApplication1.Controllers
 		// POST api/values
 		[HttpPost]
 		[Route("add")]
-		public async Task<IActionResult> Add([FromBody] string value)
+		public async Task<IActionResult> Add(DocumentViewModel documentViewModel)
 		{
-			Document document = MainAnalyzer.ParseText(value, db);
+			Document document = MainAnalyzer.ParseText(documentViewModel.Text, db);
 			db.Documents.Add(document);
 			await db.SaveChangesAsync();
 			return RedirectToAction("Get");

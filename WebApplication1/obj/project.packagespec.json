@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\n.dolgopolov\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
+    "projectUniqueName": "C:\\Users\\Nickolay\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
     "projectName": "WebApplication1",
-    "projectPath": "C:\\Users\\n.dolgopolov\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
-    "outputPath": "C:\\Users\\n.dolgopolov\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\obj\\",
+    "projectPath": "C:\\Users\\Nickolay\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\WebApplication1.csproj",
+    "outputPath": "C:\\Users\\Nickolay\\RiderProjects\\SyntaxAnalyzer\\WebApplication1\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
