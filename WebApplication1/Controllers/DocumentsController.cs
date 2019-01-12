@@ -36,10 +36,14 @@ namespace WebApplication1.Controllers
 		// POST api/values
 		[HttpPost]
 		[Route("add")]
-		public async Task<IActionResult> Add(DocumentViewModel documentViewModel)
+		public async Task<IActionResult> Add([FromBody]DocumentViewModel[] documents)
 		{
-			Document document = MainAnalyzer.ParseText(documentViewModel.Text, db);
-			db.Documents.Add(document);
+			foreach (var documentViewModel in documents)
+			{
+				Document document = MainAnalyzer.ParseText(documentViewModel.Text, db);
+				db.Documents.Add(document);
+			}
+
 			await db.SaveChangesAsync();
 			return RedirectToAction("Get");
 		}
