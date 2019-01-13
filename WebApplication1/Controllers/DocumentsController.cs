@@ -41,14 +41,15 @@ namespace WebApplication1.Controllers
         // POST api/values
         [HttpPost]
         [Route("add")]
-        public async Task<IActionResult> Add(DocumentViewModel documentViewModel)
+        public  JsonResult Add(DocumentViewModel documentViewModel)
         {
             Document document = MainAnalyzer.ParseText(documentViewModel.Text, db);
             db.Documents.Add(document);
 
 
-            await db.SaveChangesAsync();
-            return Ok();
+            db.SaveChanges();
+            document.Words = document.Words.OrderBy(x => x.Index).ToList();
+            return Json(document);
         }
 
         public ActionResult<string> Index()
