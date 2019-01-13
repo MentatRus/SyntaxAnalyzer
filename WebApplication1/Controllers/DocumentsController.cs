@@ -48,7 +48,7 @@ namespace WebApplication1.Controllers
 
 
             await db.SaveChangesAsync();
-            return RedirectToAction("Get");
+            return Ok();
         }
 
         public ActionResult<string> Index()
