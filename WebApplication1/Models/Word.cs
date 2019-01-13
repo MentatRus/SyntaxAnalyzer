@@ -6,5 +6,6 @@
 		public string Value { get; set; }
 		public PartOfSpeech PartOfSpeech { get; set; }
 		public MemberOfSentence MemberOfSentence { get; set; }
+		public int Index { get; set; }
 	}
 }
